@@ -1,0 +1,19 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background: blue;
+  }
+  
+  .shapes div {
+    display: inline-block;
+    margin: 30px;
+    cursor: pointer;
+  }
+  

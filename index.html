@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun Learning for Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="title">🎉 Fun Learning for Kids 🎉</h1>
+
+    <!-- Rortating ABC, 123, Shapes around world --START -->
+      <!-- Rortating ABC, 123, Shapes around world --END -->
+
+    <div class="container">
+
+        <a href="abcwithimage.html" class="card abcwithimage">
+            <div class="content">
+                <span class="big-text dancing">A B C</span>
+                <p>Learn Alphabets with Images</p>
+            </div>
+        </a>
+        
+        <a href="abc.html" class="card abc">
+            <div class="content">
+                <span class="big-text dancing">A B C</span>
+                <p>Learn Alphabets</p>
+            </div>
+        </a>
+
+        <a href="numbers.html" class="card numbers">
+            <div class="content">
+                <span class="big-text bouncing">1 2 3</span>
+                <p>Learn Numbers</p>
+            </div>
+        </a>
+
+        <a href="hindi.html" class="card hindi">
+            <div class="content">
+                <span class="big-text dancing">अ आ इ</span>
+                <p> हिंदी वर्णमाला सीखें</p>
+            </div>
+        </a>
+
+        <a href="shapes.html" class="card shapes">
+            <div class="content">
+                <div class="shape circle"></div>
+                <div class="shape square"></div>
+                <div class="shape triangle"></div>
+                <p>Learn Shapes</p>
+            </div>
+        </a>
+
+    </div>
+    <!-- for Cursor options -->
+    <div class="cursor-picker">
+  <p>Choose your cursor 🖱️</p>
+
+ <img src="images/cursors/dinosaur.png"
+     class="cursor-option"
+     onclick="changeCursor('dinosaur.png')">
+
+<img src="images/cursors/star.png"
+     class="cursor-option"
+     onclick="changeCursor('star.png')">
+
+
+  <button onclick="resetCursor()">Default</button>
+</div>
+
+     <!-- end of Cursor options -->
+
+    
+    <!-- for bubbles with abc -->
+    <div id="bubble-container"></div>
+    <!-- end -->
+    <script src="script.js"></script>
+</body>
+</html>
