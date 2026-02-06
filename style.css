@@ -176,6 +176,23 @@ p {
     to { transform: scale(2); opacity: 0; }
 }
 
+.footer {
+      text-align: center;
+        padding: 15px;
+          background: #333;
+            color: white;
+              margin-top: 40px;
+              }
+
+              .footer a {
+                color: #ffcc00;
+                  text-decoration: none;
+                    margin: 0 10px;
+                    }
+
+                    .footer a:hover {
+                      text-decoration: underline;
+                      }
 
 /*  
 #bubble-container {
