@@ -1,86 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="description" content="Fun ABC and numbers learning games for toddlers and kids with images and sound.">
 <head>
-    <meta charset="UTF-8">
-    <title>Fun Learning for Kids</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Fun ABC and numbers learning games for toddlers and kids with images and sound.">
+
+<title>Fun Learning for Kids</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1 class="title">🎉 Fun Learning for Kids 🎉</h1>
-
-    <!-- Rortating ABC, 123, Shapes around world --START -->
-      <!-- Rortating ABC, 123, Shapes around world --END -->
-
-    <div class="container">
-
-        <a href="abcwithimage.html" class="card abcwithimage">
-            <div class="content">
-                <span class="big-text dancing">A B C</span>
-                <p>Learn Alphabets with Images</p>
-            </div>
-        </a>
-        
-        <a href="abc.html" class="card abc">
-            <div class="content">
-                <span class="big-text dancing">A B C</span>
-                <p>Learn Alphabets</p>
-            </div>
-        </a>
-
-        <a href="numbers.html" class="card numbers">
-            <div class="content">
-                <span class="big-text bouncing">1 2 3</span>
-                <p>Learn Numbers</p>
-            </div>
-        </a>
-
-        <a href="hindi.html" class="card hindi">
-            <div class="content">
-                <span class="big-text dancing">अ आ इ</span>
-                <p> हिंदी वर्णमाला सीखें</p>
-            </div>
-        </a>
-
-        <a href="shapes.html" class="card shapes">
-            <div class="content">
-                <div class="shape circle"></div>
-                <div class="shape square"></div>
-                <div class="shape triangle"></div>
-                <p>Learn Shapes</p>
-            </div>
-        </a>
-
-    </div>
-    <!-- for Cursor options -->
-    <div class="cursor-picker">
-  <p>Choose your cursor 🖱️</p>
-
- <img src="images/cursors/dinosaur.png"
-     class="cursor-option"
-     onclick="changeCursor('dinosaur.png')">
-
-<img src="images/cursors/star.png"
-     class="cursor-option"
-     onclick="changeCursor('star.png')">
-
-
-  <button onclick="resetCursor()">Default</button>
+<!-- Cursor dropdown (top-left) -->
+<div class="cursor-dropdown">
+  <select id="cursorSelect">
+    <option value="">Default Cursor</option>
+    <option value="dinosaur.png">🦖 Dinosaur</option>
+    <option value="star.png">⭐ Star</option>
+  </select>
 </div>
 
-     <!-- end of Cursor options -->
+<h1 class="title">🎉 Fun Learning for Kids 🎉</h1>
 
-    
-    <!-- for bubbles with abc -->
-    <div id="bubble-container"></div>
-    <!-- end -->
-    <script src="script.js"></script>
-</body>
-</html>
+<!-- Safe wrapper prevents bubble overlap -->
+<div class="page-wrapper">
+
+  <div class="container">
+
+    <a href="abcwithimage.html" class="card abcwithimage">
+      <div class="content">
+        <span class="big-text dancing">A B C</span>
+        <p>Learn Alphabets with Images</p>
+      </div>
+    </a>
+
+    <a href="abc.html" class="card abc">
+      <div class="content">
+        <span class="big-text dancing">A B C</span>
+        <p>Learn Alphabets</p>
+      </div>
+    </a>
+
+    <a href="numbers.html" class="card numbers">
+      <div class="content">
+        <span class="big-text bouncing">1 2 3</span>
+        <p>Learn Numbers</p>
+      </div>
+    </a>
+
+    <a href="hindi.html" class="card hindi">
+      <div class="content">
+        <span class="big-text dancing">अ आ इ</span>
+        <p>हिंदी वर्णमाला सीखें</p>
+      </div>
+    </a>
+
+    <a href="shapes.html" class="card shapes">
+      <div class="content">
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+        <p>Learn Shapes</p>
+      </div>
+    </a>
+
+    <!-- NEW animals card -->
+    <a href="animals.html" class="card animals">
+      <div class="content">
+        <span class="big-text bouncing">🐶 🐱</span>
+        <p>Learn Animals</p>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<!-- bubbles -->
+<div id="bubble-container"></div>
+
+<script src="script.js"></script>
+
 <footer class="footer">
-      <a href="aboutus.html">About Us</a>
-        |
-          <a href="privacy.html">Privacy Policy</a>
-          </footer>
+  <a href="aboutus.html">About Us</a> |
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+
+</html>

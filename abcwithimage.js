@@ -1,48 +1,91 @@
+/////////////////////////////////////////////////
+// ELEMENTS
+/////////////////////////////////////////////////
+
 const popup = document.getElementById("popup");
 const circleText = document.getElementById("circleText");
 const popupImage = document.getElementById("popupImage");
-const sound = document.getElementById("sound");
+
+/////////////////////////////////////////////////
+// 🚀 ULTRA-FAST PRELOAD CACHE
+/////////////////////////////////////////////////
+
+const imageCache = {};
+const soundCache = {};
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+letters.forEach(letter => {
+
+  // preload image
+  const img = new Image();
+  img.src = `images/abcwithimages/${letter}.png`;
+  imageCache[letter] = img;
+
+  // preload sound
+  const audio = new Audio();
+  audio.src = `sounds/${letter}.mp3`;
+  soundCache[letter] = audio;
+
+});
+
+/////////////////////////////////////////////////
+// SHOW LETTER POPUP
+/////////////////////////////////////////////////
 
 function showLetter(letter) {
 
-  // RESET popup fully
+  // reset popup animation
   popup.classList.add("hidden");
   popup.classList.remove("show");
-  popup.offsetWidth; // 👈 force reflow (CRITICAL)
+  popup.offsetWidth; // force reflow
 
-  // Set content
+  // set letter
   circleText.textContent = letter;
-  popupImage.src = `images/abcwithimages/${letter}.png`;
-  sound.src = `sounds/${letter}.mp3`;
 
-  // Show popup
+  // instant image from cache
+  popupImage.src = imageCache[letter].src;
+
+  // show popup
   popup.classList.remove("hidden");
   popup.classList.add("show");
 
-  // Play sound
-  sound.currentTime = 0;
-  sound.play();
+  // instant sound from cache
+  const cachedSound = soundCache[letter];
+  cachedSound.currentTime = 0;
+  cachedSound.play();
 
- 
-  // Auto close popup after 2 seconds
+  // 🎉 confetti burst
+  launchConfetti();
+
+  // auto close popup
   setTimeout(() => {
     popup.classList.remove("show");
     popup.classList.add("hidden");
   }, 5000);
 }
-//for closing popup on clicking
+
+/////////////////////////////////////////////////
+// CLOSE POPUP ON CLICK
+/////////////////////////////////////////////////
+
 popup.addEventListener("click", () => {
   popup.classList.remove("show");
   popup.classList.add("hidden");
 });
 
- //confetti
-  function launchConfetti() {
-  confetti({  particleCount: 150,
-    spread: 120,
-    startVelocity: 30,
-    gravity: 0.6,
-    scalar: 1.2 });
+/////////////////////////////////////////////////
+// CONFETTI EFFECT
+/////////////////////////////////////////////////
+
+function launchConfetti() {
+  if (typeof confetti === "function") {
+    confetti({
+      particleCount: 150,
+      spread: 120,
+      startVelocity: 30,
+      gravity: 0.6,
+      scalar: 1.2
+    });
+  }
 }
-
-
