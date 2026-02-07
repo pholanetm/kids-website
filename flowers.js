@@ -3,13 +3,14 @@
 /////////////////////////////////////////////////
 
 const flowers = [
-  "rose","cat","lion","tiger","elephant",
-  "monkey","cow","horse","goat","bear",
-  "zebra","giraffe","rabbit","fox","deer",
+  "rose","tulip","sunflower","lotus","daisy",
+"lily","orchid","marigold","jasmine","hibiscus",
+"lavender","peony","daffodil","cherryblossom","poppy",
 
-  "camel","wolf","kangaroo","panda","rhino",
-  "hippo","cheetah","buffalo","donkey","pig",
-  "sheep","yak","otter","squirrel","leopard"
+"magnolia","bluebell","gardenia","carnation","iris",
+"zinnia","begonia","camellia","petunia","azalea",
+"geranium","snapdragon","cosmos","anemone","buttercup"
+
 ];
 
 const PAGE_SIZE = 15;
