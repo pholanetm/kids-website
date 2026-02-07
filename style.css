@@ -135,6 +135,10 @@ body {
 .flowers {
   background: #bb00ff;
 }
+
+.birds {
+  background:#97e156;
+}
 .content {
     padding: 30px;
 }
@@ -348,3 +352,34 @@ a,
   cursor: url("images/cursors/dinosaur_fire.png") 16 16, pointer;
 }
 /*  Cursor for clickable elements--end. */
+
+/* Cartoon bubble button for parents Corner*/
+
+.bubble-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+
+  background: linear-gradient(135deg, #ff9800, #ff4081);
+  color: white;
+
+  padding: 14px 20px;
+  border-radius: 40px;
+
+  font-weight: bold;
+  text-decoration: none;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+  z-index: 999;
+
+  animation: floaty 2s infinite alternate;
+}
+
+@keyframes floaty {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+.bubble-btn:hover {
+  transform: scale(1.12);
+} 

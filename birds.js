@@ -1,15 +1,15 @@
 /////////////////////////////////////////////////
-// FLOWER DATA (30 animals → 2 pages)
+// BIRD DATA (30 birds → 2 pages)
 /////////////////////////////////////////////////
 
-const flowers = [
-  "rose","tulip","sunflower","lotus","daisy",
-"lily","orchid","marigold","jasmine","hibiscus",
-"lavender","peony","daffodil","cherryblossom","poppy",
+const birds = [
+  "peacock","sparrow","crow","parrot","pigeon",
+"myna","kingfisher","bulbul","koel","eagle",
+"owl","vulture","crane","heron","stork",
 
-"magnolia","bluebell","gardenia","carnation","iris",
-"zinnia","begonia","camellia","petunia","azalea",
-"geranium","snapdragon","cosmos","anemone","buttercup"
+"duck","goose","quail","lapwing","woodpecker",
+"sunbird","hornbill","kite","falcon","weaverbird",
+"drongo","barbet","roller","flamingo","ibis"
 
 ];
 
@@ -20,7 +20,7 @@ let currentPage = 0;
 // ELEMENTS
 /////////////////////////////////////////////////
 
-const grid = document.getElementById("flowerGrid");
+const grid = document.getElementById("birdGrid");
 const popup = document.getElementById("popup");
 const popupImg = document.getElementById("popupImg");
 const popupName = document.getElementById("popupName");
@@ -33,16 +33,16 @@ const nextBtn = document.getElementById("nextBtn");
 const imageCache = {};
 const soundCache = {};
 
-flowers.forEach(name => {
+birds.forEach(name => {
 
   // preload image
   const img = new Image();
-  img.src = `images/flowers/${name}.png`;
+  img.src = `images/birds/${name}.png`;
   imageCache[name] = img;
 
   // preload sound
   const audio = new Audio();
-  audio.src = `sounds/flowers/${name}.mp3`;
+  audio.src = `sounds/birds/${name}.mp3`;
   audio.preload = "auto";
   soundCache[name] = audio;
 
@@ -59,7 +59,7 @@ function loadPage() {
   const start = currentPage * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  flowers.slice(start, end).forEach(name => {
+  birds.slice(start, end).forEach(name => {
 
     const card = document.createElement("div");
     card.className = "card";
@@ -69,7 +69,7 @@ function loadPage() {
       <p>${capitalize(name)}</p>
     `;
 
-    card.onclick = () => showFlower(name);
+    card.onclick = () => showBird(name);
 
     grid.appendChild(card);
   });
@@ -83,7 +83,7 @@ nextBtn.onclick = () => {
 
   currentPage++;
 
-  if (currentPage * PAGE_SIZE >= flowers.length)
+  if (currentPage * PAGE_SIZE >= birds.length)
     currentPage = 0;
 
   loadPage();
@@ -93,7 +93,7 @@ nextBtn.onclick = () => {
 // POPUP DISPLAY
 /////////////////////////////////////////////////
 
-function showFlower(name) {
+function showBird(name) {
 
   popupImg.src = imageCache[name].src;
   popupName.textContent = capitalize(name);
