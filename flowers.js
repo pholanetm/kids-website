@@ -2,8 +2,8 @@
 // ANIMAL DATA (30 animals → 2 pages)
 /////////////////////////////////////////////////
 
-const animals = [
-  "dog","cat","lion","tiger","elephant",
+const flowers = [
+  "rose","cat","lion","tiger","elephant",
   "monkey","cow","horse","goat","bear",
   "zebra","giraffe","rabbit","fox","deer",
 
@@ -19,7 +19,7 @@ let currentPage = 0;
 // ELEMENTS
 /////////////////////////////////////////////////
 
-const grid = document.getElementById("animalGrid");
+const grid = document.getElementById("flowerGrid");
 const popup = document.getElementById("popup");
 const popupImg = document.getElementById("popupImg");
 const popupName = document.getElementById("popupName");
@@ -32,16 +32,16 @@ const nextBtn = document.getElementById("nextBtn");
 const imageCache = {};
 const soundCache = {};
 
-animals.forEach(name => {
+flowers.forEach(name => {
 
   // preload image
   const img = new Image();
-  img.src = `images/animals/${name}.png`;
+  img.src = `images/flowers/${name}.png`;
   imageCache[name] = img;
 
   // preload sound
   const audio = new Audio();
-  audio.src = `sounds/animals/${name}.mp3`;
+  audio.src = `sounds/flowers/${name}.mp3`;
   audio.preload = "auto";
   soundCache[name] = audio;
 
@@ -58,7 +58,7 @@ function loadPage() {
   const start = currentPage * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  animals.slice(start, end).forEach(name => {
+  flowers.slice(start, end).forEach(name => {
 
     const card = document.createElement("div");
     card.className = "card";
@@ -68,7 +68,7 @@ function loadPage() {
       <p>${capitalize(name)}</p>
     `;
 
-    card.onclick = () => showAnimal(name);
+    card.onclick = () => showFlower(name);
 
     grid.appendChild(card);
   });
@@ -82,7 +82,7 @@ nextBtn.onclick = () => {
 
   currentPage++;
 
-  if (currentPage * PAGE_SIZE >= animals.length)
+  if (currentPage * PAGE_SIZE >= flowers.length)
     currentPage = 0;
 
   loadPage();
@@ -92,7 +92,7 @@ nextBtn.onclick = () => {
 // POPUP DISPLAY
 /////////////////////////////////////////////////
 
-function showAnimal(name) {
+function showFlower(name) {
 
   popupImg.src = imageCache[name].src;
   popupName.textContent = capitalize(name);
